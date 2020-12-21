@@ -42,6 +42,13 @@ function navigateToTodo(doc, event) {
   router.navigate(`todo/${todoId}`);
 }
 
+function todoStatistic(doc) {
+  console.log('Rendering todo report page');
+
+  const router = configureRouter(doc, "/");
+  router.navigate('report');
+}
+
 function notifyAboutTodoChange(doc) {
   const todoItemChanged = new Event("todo-item-changed");
   doc.dispatchEvent(todoItemChanged);
@@ -110,6 +117,11 @@ export function getListEventHandlers(doc) {
       elementId: "todo-list",
       eventName: "click",
       handler: todoListActionHandler.bind(null, doc),
+    },
+    {
+      elementId: "todo-statistic",
+      eventName: "click",
+      handler: todoStatistic.bind(null, doc),
     },
     {
       element: doc,

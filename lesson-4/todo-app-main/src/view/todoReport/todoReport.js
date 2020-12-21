@@ -1,6 +1,6 @@
-import {clearRootElement, createElement} from "../../helpers";
-import {setupEventListeners} from "../../events";
-import {getTodoEventHandlers} from "../../events/todoEventHandlers";
+import {clearRootElement, createElement} from "../../helpers.js";
+import {setupEventListeners} from "../../events.js";
+import {getReportEventHandlers} from "../../events/reportEventHandlers.js";
 
 function renderAppContainer(doc) {
   const element = createElement(doc, "div");
@@ -40,6 +40,14 @@ function renderTodoInfo(doc, Count, optionCounter, ) {
   return h3;
 }
 
+function renderButton(doc, actionName, className, title) {
+  const button = createElement(doc, "button", className);
+  button.innerHTML = title;
+  button.setAttribute("data-action", actionName);
+
+  return button;
+}
+
 export default function renderReportPage(doc, allTodo) {
   const rootElement = clearRootElement(doc);
   const appContainer = renderAppContainer(doc);
@@ -55,16 +63,20 @@ export default function renderReportPage(doc, allTodo) {
       completedCounter += 1;
     }
 
-    if (todo.state.Postponed === "postponed") {
+    if (todo.state === "postponed") {
       postponedCounter += 1;
     }
   }
 
   todoReport.append(renderTodoInfo(doc, completedCounter, 'completed'));
   todoReport.append(renderTodoInfo(doc, postponedCounter, 'postponed'));
+  todoReport.append(renderButton(doc,
+    "back-to-list",
+    "back-to-list-button",
+    "Back to list"));
 
   appContainer.append(todoReport);
   rootElement.append(appContainer);
 
-  setupEventListeners(doc, getTodoEventHandlers(doc));
+  setupEventListeners(doc, getReportEventHandlers(doc));
 }

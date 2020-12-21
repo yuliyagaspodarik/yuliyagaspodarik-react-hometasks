@@ -73,10 +73,11 @@ function renderTodoTotal(doc, totalCount) {
   return h2;
 }
 
-function renderStatPage(doc) {
+function renderStat(doc) {
   const filterDiv = createElement(doc, "div", "list-filter-container");
   filterDiv.innerHTML = "<a href='#'>Show statistics</a>"; // implement as link <a>
   filterDiv.onclick = (EO) => {EO.preventDefault()};
+  filterDiv.id = "todo-statistic";
 
   return filterDiv;
 }
@@ -109,7 +110,7 @@ function renderTodoListContent(doc, allTodo) {
   listContainer.append(renderTitle(doc, "My ToDos"));
 
   listContainer.append(renderTodoTotal(doc, allTodo.length));
-  listContainer.append(renderStatPage(doc));
+  listContainer.append(renderStat(doc));
   listContainer.append(renderTodoList(doc, allTodo));
 
   return listContainer;

@@ -4,7 +4,7 @@ import todoStorage from "./model/todoStorage.js";
 import renderTodoListPage from "./view/todoListPage/todoListPage.js";
 
 import renderTodoPage from "./view/todoPage/todoPage.js";
-import renderReportPage from "./view/todoReport/todoReport";
+import renderReportPage from "./view/todoReport/todoReport.js";
 
 let router = null;
 
