@@ -13,7 +13,7 @@ function renderTodoTotal(doc, totalCount) {
   const h2 = createElement(doc, "h2");
   const textSpan = createElement(doc, "span");
   textSpan.id = "total-counter-text";
-  textSpan.innerHTML = "Total Todo Count:";
+  textSpan.innerHTML = "Total Todo Count: ";
 
   const totalSpan = createElement(doc, "span");
   totalSpan.id = "total-counter-number";
@@ -29,7 +29,7 @@ function renderTodoInfo(doc, Count, optionCounter, ) {
   const h3 = createElement(doc, "h3");
   const textSpan = createElement(doc, "span");
   textSpan.id = optionCounter;
-  textSpan.innerHTML = `${optionCounter}:`;
+  textSpan.innerHTML = `${optionCounter}: `;
 
   const totalSpan = createElement(doc, "span");
   totalSpan.innerHTML = `${Count}`;
@@ -46,6 +46,15 @@ function renderButton(doc, actionName, className, title) {
   button.setAttribute("data-action", actionName);
 
   return button;
+}
+
+function renderStatisticPanel(doc) {
+  const statisticPanel = createElement(doc, "div", "statistic-panel-container");
+  statisticPanel.innerHTML = "<a href='#'>Show statistics</a>";
+  statisticPanel.onclick = (EO) => {EO.preventDefault()};
+  statisticPanel.id = "todo-statistic";
+
+  return statisticPanel;
 }
 
 export default function renderReportPage(doc, allTodo) {
@@ -72,10 +81,11 @@ export default function renderReportPage(doc, allTodo) {
   todoReport.append(renderTodoInfo(doc, postponedCounter, 'postponed'));
   todoReport.append(renderButton(doc,
     "back-to-list",
-    "back-to-list-button",
+    "back-to-list-button--r",
     "Back to list"));
 
   appContainer.append(todoReport);
+  appContainer.append(renderStatisticPanel(doc));
   rootElement.append(appContainer);
 
   setupEventListeners(doc, getReportEventHandlers(doc));

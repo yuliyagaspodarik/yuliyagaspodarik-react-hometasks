@@ -58,6 +58,10 @@ html, body {
   margin-bottom: 10px;
 }
 
+.form-row-right input {
+  margin-left: 0.5rem;
+}
+
 #todo-text {
   width: 100%;
   padding: 0 0.5rem;
@@ -68,7 +72,8 @@ html, body {
 }
 
 #add-todo-button,
-#clear-form-button {
+#clear-form-button,
+.back-to-list-button--r {
   padding: 0.3rem 1rem;
   border: 1px solid #1964bb;
   border-radius: 4px;
@@ -76,12 +81,14 @@ html, body {
   font-weight: 600;
 }
 
-#add-todo-button {
+#add-todo-button,
+.back-to-list-button--r {
   background-color: #1964bb;
   color: white;
 }
 
-#add-todo-button:hover {
+#add-todo-button:hover,
+.back-to-list-button--r:hover {
   background-color: #1b6dcc;
 }
 
@@ -106,7 +113,7 @@ html, body {
   flex-flow: row wrap;
 }
 
-.list-filter-container {
+.statistic-panel-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -120,7 +127,9 @@ html, body {
   font-size: 1.5rem;
 }
 
-.list-filter-container a {
+.statistic-panel-container a {
+  display: inline-block;
+  margin: 1rem 0;
   text-decoration: none;
   color: gray;
 }
@@ -175,8 +184,8 @@ html, body {
 
 .control-block button:hover {
   cursor: pointer;
-  border-left: 1px solid #1b6dcc;
-  border-right: 1px solid #1b6dcc;
+  background-color: #1b6dcb;
+  border-color: #1b6dcb;
 }
 
 .view-button,
