@@ -20,12 +20,17 @@ function renderStatusPanel(doc, todo) {
   return statusPanel;
 }
 
-function formatDateForPanel(prefix, date) {
-  const datePart = `${date.getDate()}.${
-    date.getMonth() + 1
-  }.${date.getFullYear()}`;
+function formatLength (val) {
+  let strVal = val.toString();
+  while (strVal.length < 2)
+    strVal = '0' + strVal;
+  return strVal;
+}
 
-  const timePart = `${date.getHours()}:${date.getMinutes()}`;
+function formatDateForPanel(prefix, date) {
+  const datePart = `${formatLength(date.getDate())}.${formatLength(date.getMonth() + 1)}.${date.getFullYear()}`;
+
+  const timePart = `${formatLength(date.getHours())}:${formatLength(date.getMinutes())}`;
 
   return `${prefix}: ${datePart} - ${timePart}`;
 }
