@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Counter.css';
-
+/*
 export function Counter(props) {
   return (
     <React.Fragment>
@@ -10,3 +10,4 @@ export function Counter(props) {
     </React.Fragment>
   )
 }
+*/

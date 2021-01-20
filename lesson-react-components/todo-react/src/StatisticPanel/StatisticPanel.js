@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './StatisticPanel.css';
-
+/*
 export function StatisticPanel(props) {
   return (
     <React.Fragment>
@@ -11,3 +11,4 @@ export function StatisticPanel(props) {
     </React.Fragment>
   )
 }
+*/

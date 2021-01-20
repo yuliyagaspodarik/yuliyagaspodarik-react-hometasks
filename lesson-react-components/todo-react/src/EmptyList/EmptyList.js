@@ -2,8 +2,8 @@ import React from 'react';
 
 import './EmptyList.css';
 
-export function EmptyList() {
-  return (
+export const EmptyList = () => (
     <div className="empty-list">Nothing to do</div>
-  )
-}
+  );
+
+
