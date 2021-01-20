@@ -20,7 +20,6 @@ class TodoApp extends React.Component {
 
   render() {
     const { todos } = this.state;
-    console.log('===>',this.state);
     return (
       <div id="app-container">
         <TodoForm onCreatedTodo={this.handleCreatedTodo}/>

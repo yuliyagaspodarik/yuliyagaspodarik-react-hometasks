@@ -7,5 +7,3 @@ export const Button = ({ name, className }) => (
     {name}
   </button>
 );
-
-//<button className={props.classNameButton} data-action={props.dataAction} data-id={props.dataId}>{props.title}</button>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './LabeledDateTimePanel.css';
-import {FormattedDatePanel} from "../FormattedDatePanel/FormattedDatePanel";
+import { FormattedDatePanel } from "../FormattedDatePanel/FormattedDatePanel";
 
 export const LabeledDateTimePanel =  ({ label, dateTime }) =>
   dateTime === null ? null : (

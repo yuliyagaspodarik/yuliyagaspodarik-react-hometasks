@@ -1,0 +1,10 @@
+ul {
+    list-style: none;
+    padding: 0 0.5rem;
+}
+
+li {
+    padding: 0 0.5rem;
+    background-color: #efefef;
+    border-radius: 10px;
+}

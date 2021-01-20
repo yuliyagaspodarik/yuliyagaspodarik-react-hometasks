@@ -5,7 +5,7 @@ import { LabeledDateTimePanel } from "../LabeledDateTimePanel/LabeledDateTimePan
 import { TodoStatePanel } from '../TodoStatePanel/TodoStatePanel';
 import { ControlBlockPanel } from '../ControlBlockPanel/ControlBlockPanel';
 
-export const Todo = ({todo}) => (
+export const Todo = ({ todo }) => (
   <React.Fragment key={`div-${todo.id}`}>
     <h2>{todo.text}</h2>
     <dl>
@@ -13,6 +13,7 @@ export const Todo = ({todo}) => (
       <LabeledDateTimePanel label={"Created"} dateTime={todo.dateCreated}/>
       <LabeledDateTimePanel label={"Completed"} dateTime={todo.dateCompleted}/>
     </dl>
+    <ControlBlockPanel/>
   </React.Fragment>
 );
 

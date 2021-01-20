@@ -15,16 +15,4 @@ export const TodoStatePanel = ({ state }) => {
     </React.Fragment>
   )
 };
-/*
-export function TodoStatePanel(props) {
-  return (
-    <React.Fragment>
-      <div className="info-block">
-        <p className="status-panel">{props.todoStatus}</p>
-        <p className="created-date-panel">{props.todoDateCreated}</p>
-        <p className="done-date-panel">{props.todoDateComplited}</p>
-      </div>
-    </React.Fragment>
-  )
-}
-*/
+
